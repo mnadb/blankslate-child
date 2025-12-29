@@ -41,3 +41,44 @@ button {
   padding: 14px 22px;
   font-weight: 700;
 }
+
+/* ==== Section 1 ==== */
+h1 {
+  font-weight: 1000;
+  font-family: "Syne", sans-serif;
+  text-align: center;
+  padding: 80px;
+}
+
+.can-leaf {
+  /* Flexbox pour centrer l'ensemble */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Important pour positionner les feuilles en absolute */
+  width: min(700px, 90vw); /*la largeur de l'élément sera la plus petite valeur entre 700px et 90% de la largeur de la fenêtre. */
+  min-height: 420px; /* Réserve de place pour la superposition */
+}
+
+.leaf-right,
+.leaf-left {
+  position: absolute;
+  z-index: 1; /* Derrière la canette */
+  width: min(320px, 45vw);
+  height: auto;
+}
+/* Position de la feuille de gauche */
+.leaf-left {
+  left: 50%;
+  transform: translate(-15px); /* décale vers la gauche*/
+}
+/* Position de la feuille de droite */
+.leaf-right {
+  left: 50%;
+  transform: translate(-320px); /* décale vers la droite*/
+}
+/* La canette en premier-plan */
+.can {
+  z-index: 2;
+}
