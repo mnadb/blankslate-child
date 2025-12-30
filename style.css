@@ -12,8 +12,8 @@ Tags: boisson, vente
 /* ==== Header ==== */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  color: #ffff;
 }
 
 .logo img {
@@ -43,30 +43,32 @@ button {
 }
 
 /* ==== Section 1 ==== */
+
 h1 {
-  font-weight: 1000;
-  font-family: "Syne", sans-serif;
-  text-align: center;
-  padding: 80px;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 800;
+  margin: 20px;
 }
 
-.can-leaf {
-  /* Flexbox pour centrer l'ensemble */
+.hero {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Important pour positionner les feuilles en absolute */
-  width: min(700px, 90vw); /*la largeur de l'élément sera la plus petite valeur entre 700px et 90% de la largeur de la fenêtre. */
-  min-height: 420px; /* Réserve de place pour la superposition */
+  position: relative;
+  background-color: #ece2da;
+}
+.can-leaf .wp-block-group__inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .leaf-right,
 .leaf-left {
   position: absolute;
   z-index: 1; /* Derrière la canette */
-  width: min(320px, 45vw);
-  height: auto;
 }
 /* Position de la feuille de gauche */
 .leaf-left {
@@ -81,4 +83,39 @@ h1 {
 /* La canette en premier-plan */
 .can {
   z-index: 2;
+}
+/* ==== Section 2 ==== */
+
+/* ==== Section 3 ==== */
+h2 {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  padding: 50px;
+}
+
+.p-text {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  margin-bottom: 10px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.btn {
+  font-family: "Syne", sans-serif;
+  font-size: 15px;
+}
+
+/* ==== Section 4 ==== */
+.advices {
+  display: flex;
+  flex-direction: column;
+}
+.advices h2 {
+  color: #3b8e46;
 }
