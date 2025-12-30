@@ -9,17 +9,25 @@ Tags: boisson, vente
 
 */
 
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+}
+
 /* ==== Header ==== */
 header {
   display: flex;
   justify-content: space-between;
-  color: #ffff;
+  color: #ffff !important;
 }
 
 .logo img {
   max-width: 100%;
   width: 150px;
   height: auto;
+  padding: 10px;
 }
 
 nav {
@@ -57,6 +65,7 @@ h1 {
   align-items: center;
   position: relative;
   background-color: #ece2da;
+  clip-path: ellipse(150% 100% at top); /* bord courbé*/
 }
 .can-leaf .wp-block-group__inner-container {
   display: flex;
@@ -78,44 +87,72 @@ h1 {
 /* Position de la feuille de droite */
 .leaf-right {
   left: 50%;
-  transform: translate(-320px); /* décale vers la droite*/
+  transform: translate(-360px); /* décale vers la droite*/
 }
 /* La canette en premier-plan */
 .can {
   z-index: 2;
 }
 /* ==== Section 2 ==== */
+/*.......*/
 
 /* ==== Section 3 ==== */
+
+.gallery-gouts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 1000px;
+  clip-path: ellipse(180% 100% at top); /* bord courbé*/
+}
 h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
+  font-size: 25px;
   font-weight: 800;
-  padding: 50px;
+  padding: 30px;
 }
 
 .p-text {
   text-align: center;
   font-family: "Syne", sans-serif;
-  margin-bottom: 10px;
 }
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  gap: 38px;
 }
 
+.btn-cta {
+  position: relative;
+}
 .btn {
+  position: absolute;
+  left: 40%;
   font-family: "Syne", sans-serif;
-  font-size: 15px;
+}
+.btn:hover {
 }
 
 /* ==== Section 4 ==== */
+
 .advices {
-  display: flex;
-  flex-direction: column;
+  font-family: "syne", sans-serif;
 }
+
 .advices h2 {
   color: #3b8e46;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
+.name .wp-block-group__inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:center ;
+ 
+ 
+}
+
