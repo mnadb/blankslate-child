@@ -17,6 +17,7 @@
     <?php get_header();  // inclure le fichier header.php 
     ?>
 
+
     <main>
     
             <!--Conteneur de superposition (feuilles + canette)-->

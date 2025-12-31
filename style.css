@@ -14,6 +14,7 @@ body * {
   padding: 0;
   box-sizing: border-box;
   font-family: "Syne", sans-serif;
+  overflow: hidden; /* évite le scroll horizontal si une feuille déborde */
 }
 
 /* ==== Header ==== */
@@ -40,7 +41,13 @@ header nav a {
   color: black;
   text-decoration: none;
   font-size: 14px;
+  transition: 0.5s;
 }
+
+header nav a:hover {
+  color: #dc9f96;
+}
+
 /* ==== Bouton commander ==== */
 button {
   background-color: #dc9f96;
@@ -48,7 +55,41 @@ button {
   border: none;
   padding: 14px 22px;
   font-weight: 700;
+  cursor: pointer;
 }
+button:hover {
+  background-color: #3b8e46;
+}
+/* ====Media Query ==== */
+@media screen and (min-width: 320px){
+  header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;          /* permet de passer à la ligne si ça ne tient pas */
+  justify-content: center;
+  gap: 16px;
+}
+
+}
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    justify-content: flex-end;
+    gap: 28px;
+  }
+}
+
 
 /* ==== Section 1 ==== */
 
@@ -76,6 +117,7 @@ h1 {
 
 .leaf-right,
 .leaf-left {
+  
   position: absolute;
   z-index: 1; /* Derrière la canette */
 }
@@ -93,8 +135,29 @@ h1 {
 .can {
   z-index: 2;
 }
+/* ==== Media Query ==== */
+@media ( max-width: 767px) { /* sur tablette */
+  .leaf-right,
+  .leaf-left {
+  display:none ; /* option la plus stable pour 320px */
+  
+  }
+
+  h1 {
+    font-size: 28px;
+    margin: 16px;
+    text-align: center;
+  }
+
+  .hero {
+    clip-path: ellipse(220% 100% at top);
+    padding: 30px 0;
+  }
+}
+
+
 /* ==== Section 2 ==== */
-/*.......*/
+
 
 /* ==== Section 3 ==== */
 
@@ -125,21 +188,45 @@ h2 {
 }
 
 .btn-cta {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .btn {
-  position: absolute;
-  left: 40%;
-  font-family: "Syne", sans-serif;
+  cursor: pointer;
 }
+
 .btn:hover {
+  color: #3b8e46;
 }
+
+/* ==== Media Query ==== */
+/* Mobile */
+@media (max-width: 767px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-gouts {
+    height: auto;      /* évite une hauteur fixe énorme sur mobile */
+    padding-bottom: 40px;
+    clip-path: ellipse(280% 100% at top);
+    padding: 50px ;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+
+
+
+
 
 /* ==== Section 4 ==== */
-
-.advices {
-  font-family: "syne", sans-serif;
-}
 
 .advices h2 {
   color: #3b8e46;
@@ -148,11 +235,28 @@ h2 {
   margin-bottom: 50px;
   text-transform: uppercase;
 }
-.name .wp-block-group__inner-container {
+.advices {
   display: flex;
   flex-direction: row;
-  justify-content:center ;
- 
- 
+  justify-content: space-around;
+  gap: 40px;
 }
+
+.comment-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+/* ==== Media Query ==== */
+
+
+
+
+/* ==== Footer ==== */
+footer p {
+  text-align: center;
+}
+
+/* ==== Media Query ==== */
 
