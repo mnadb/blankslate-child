@@ -7,8 +7,9 @@
  <nav>
     <a href="#">Accueil</a>
      <a href="#">Nous rencontrer</a>
-     <button href="précommande">Commander</button>
+     <button> <a href="http://localhost:8080/planty/commande">Commander</a></button>
  </nav>
  
+
 
 </header>

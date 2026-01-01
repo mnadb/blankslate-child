@@ -16,11 +16,11 @@
     <?php wp_body_open(); ?>
     <?php get_header();  // inclure le fichier header.php 
     ?>
-<?php include_once 'page-nous-rencontre.php';?>
+
 
     <main>
     
-            <!--Conteneur de superposition (feuilles + canette)-->
+         
           
                 <?php the_content(); ?>
    
@@ -32,4 +32,3 @@
 </body>
 
 </html>   
-       

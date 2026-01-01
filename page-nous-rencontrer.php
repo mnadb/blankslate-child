@@ -16,7 +16,7 @@
     <?php wp_body_open(); ?>
     <?php get_header();  // inclure le fichier header.php 
     ?>
-<?php include_once 'page-nous-rencontre.php';?>
+
 
     <main>
     
@@ -32,4 +32,3 @@
 </body>
 
 </html>   
-       
