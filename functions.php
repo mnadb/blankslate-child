@@ -25,3 +25,21 @@ add_action('wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10);
 
 // END ENQUEUE PARENT ACTION
 
+//fonction pour theme.css
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+function theme_enqueue_styles()
+{
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
+}
+
+// enregistrer le menu
+function monmenu_supports()
+{
+    register_nav_menu('header', 'En tête du menu');
+    register_nav_menu('footer', 'Pied de page');
+}
+
+add_action('after_setup_theme', 'monmenu_supports');
+add_theme_support('custom-logo');
+add_theme_support('custom-menus');
