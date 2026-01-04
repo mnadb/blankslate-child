@@ -262,28 +262,68 @@ h2 {
 }
 
 /* ==== Section 4 ==== */
-
-.advices h2 {
-  color: #3b8e46;
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 50px;
-  text-transform: uppercase;
+.wp-block-group.comment {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+ 
 }
-.advices {
+.group-comment {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 40px;
+  justify-content: space-evenly;
+  margin: 60px;
 }
 
-.comment-card {
+.comment-txt {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
   align-items: center;
-  gap: 24px;
+}
+.comment-txt p {
+padding: 0 0 0 40px;
+}
+.comment-txt h3 {
+ font-weight: 600;
+ font-size: 20px;
+ padding: 0 0 20px 40px ;
+}
+
+.img-can {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 /* ==== Media Query ==== */
+/* Téléphones petits à moyens (à partir de 320px jusqu'à 480px) */
+@media screen and (max-width: 480px) {
+
+  .wp-block-group.comment {
+    margin: 15px;
+  }
+
+  .group-comment {
+    flex-direction: column;
+    margin: 15px;
+    gap: 15px;
+  }
+
+  .comment-txt {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .comment-txt p,
+  .comment-txt h3 {
+    padding-left: 0;
+  }
+
+  .comment-txt h3 {
+    font-size: 17px;
+    padding-bottom: 8px;
+  }
+}
+
 
 /* ==== Footer ==== */
 footer p {
