@@ -289,11 +289,15 @@ padding: 0 0 0 40px;
  padding: 0 0 20px 40px ;
 }
 
-.img-can {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.range-can .wp-block-group {
+  display: flex;
+  align-items: center;
+    height: auto;
+    max-width: 100%;
 }
+/* img canette*/
+
+
 /* ==== Media Query ==== */
 /* Téléphones petits à moyens (à partir de 320px jusqu'à 480px) */
 @media screen and (max-width: 480px) {
@@ -324,10 +328,11 @@ padding: 0 0 0 40px;
   }
 }
 
-
-/* ==== Footer ==== */
-footer p {
-  text-align: center;
+#site-footer {
+   padding: 20px;
+   text-align: center;
+   color: black;
+   background-color: white !important;
 }
 
-/* ==== Media Query ==== */
+

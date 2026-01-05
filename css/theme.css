@@ -1,0 +1,106 @@
+/* page : nous rencontrer */
+
+/* ====== section 1 ====== */
+.rencontre-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  clip-path: ellipse(140% 100% at top); /* bord courbé*/
+}
+.rencontre-content .rencontre-img {
+  position: absolute;
+  width: 145px;
+  margin-left: 23%;
+  margin-bottom: 120px;
+}
+
+.rencontre-text p {
+  font-size: 1.2em;
+}
+/* ====== Media Query ====== */
+@media (max-width: 320px) {
+}
+
+/* ====== section 2 ====== */
+
+.team {
+  padding: 60px 20px 70px;
+  position: relative;
+  overflow: hidden;
+}
+.team-h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 50px;
+}
+
+.team-grid {
+  display: flex;
+  margin: 0 auto;
+  justify-content:center ;
+  align-items: flex-start;
+  gap: 10%;
+}
+.team-card {
+  text-align: center;
+  width: 220px; /* stabilise l’alignement */
+}
+.team-card-img {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0 auto 18px;
+}
+.team-card-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.team-card-role {
+  font-size: 16px;
+  margin: 0;
+}
+/* ====== Média query ====== */
+@media (max-width: 320px) {
+  .team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* la branche à droite */
+
+.team-leaf {
+  position: absolute;
+  width: 170px;
+  right: 20px;
+  bottom: -2px;
+  height: auto;
+}
+/* ====== Média query ====== */
+@media (max-width: 320px) {
+  .team-leaf {
+    display: none;
+  }
+}
+/* ====== Formulaire ====== */
+.formulaire1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+.form1 {
+  padding: 20px;
+}
+.formulaire1 h2 {
+  padding: 20px;
+}
