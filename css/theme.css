@@ -1,6 +1,7 @@
 /* page : nous rencontrer */
 
 /* ====== section 1 ====== */
+
 .rencontre-content {
   display: flex;
   flex-direction: column;
@@ -22,8 +23,51 @@
 .rencontre-text p {
   font-size: 1.2em;
 }
-/* ====== Media Query ====== */
-@media (max-width: 320px) {
+/* ====== Media Query - tablette/téléphone ====== */
+
+@media screen and (max-width: 768px) {
+  .rencontre-content {
+    padding: 50px 20px;
+    height: auto;
+    min-height: 380px;
+    clip-path: ellipse(150% 100% at top);
+  }
+
+  .rencontre-content .rencontre-img {
+    width: 100px;
+    left: 20%;
+    top: 10%;
+    transform: translateX(-50%);
+  }
+
+  .rencontre-text p {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  .rencontre-content-h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .rencontre-content {
+    padding: 35px 12px;
+    height: auto; /* évite le bloc trop haut sur mobile */
+    min-height: 320px; /* garde une présence visuelle */
+    clip-path: ellipse(160% 100% at top);
+  }
+
+  .rencontre-content .rencontre-img {
+    width: 95px;
+    left: 50%;
+    top: 8%;
+    transform: translateX(-50%);
+  }
+
+  .rencontre-text p {
+    font-size: 1em;
+    line-height: 1.4;
+  }
 }
 
 /* ====== section 2 ====== */
@@ -67,12 +111,66 @@
   font-size: 16px;
   margin: 0;
 }
-/* ====== Média query ====== */
-@media (max-width: 320px) {
+/* ====== Média query - tablette/téléphone ====== */
+
+@media screen and (max-width: 768px) {
+  .team {
+    padding: 50px 20px 60px;
+  }
+
+  .team-h2 {
+    font-size: 28px;
+    margin: 0 0 35px;
+  }
+
   .team-grid {
-    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .team-card {
+    width: 200px;
+  }
+
+  .team-card-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .team {
+    padding: 40px 12px 50px;
+  }
+
+  .team-h2 {
+    font-size: 22px;
+    margin: 0 0 25px;
+  }
+
+  .team-grid {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .team-card-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 12px;
+  }
+
+  .team-card-name {
+    font-size: 16px;
+  }
+
+  .team-card-role {
+    font-size: 14px;
   }
 }
 
@@ -80,18 +178,14 @@
 
 .team-leaf {
   position: absolute;
-  width: 170px;
+  width: 90px;
   right: 20px;
   bottom: -2px;
   height: auto;
 }
-/* ====== Média query ====== */
-@media (max-width: 320px) {
-  .team-leaf {
-    display: none;
-  }
-}
-/* ====== Formulaire ====== */
+
+/* ====== Section 3 : le formulaire ====== */
+
 .formulaire1 {
   display: flex;
   flex-direction: column;
@@ -122,7 +216,7 @@ input.wpcf7-form-control.wpcf7-text {
 
 .wpcf7-textarea {
   width: 450px;
-  height: 200px;
+  height: 250px;
   border: none;
   border-radius: 5px;
   margin: 10px 0;
@@ -134,21 +228,83 @@ input[type="submit"].wpcf7-submit {
   margin-top: 20px;
   color: FFF;
   width: 180px;
-  margin-left: 150px;
+  margin-left: 135px;
   border-radius: 6px;
-
-  transition: 0.2s ease-in-out;
-}
-
-.wpcf7-submit:hover {
-  background-color: #3b8e46;
-  cursor: pointer;
 }
 
 img.wp-image-517 {
   position: absolute;
   left: 34%;
-  bottom: -55%;
+  bottom: -85%;
   z-index: 1;
 }
+/* ====== Média query - tablette/téléphone ====== */
 
+@media screen and (max-width: 768px) {
+  .form1 {
+    padding: 30px;
+  }
+
+  input.wpcf7-form-control.wpcf7-text,
+  .wpcf7-textarea {
+    width: 100%;
+  }
+
+  input[type="submit"].wpcf7-submit {
+    margin-left: 0;
+    display: block;
+    margin: 20px auto 0;
+  }
+
+  img.wp-image-517 {
+    left: 32%;
+    bottom: -62%;
+    transform: translateX(-50%);
+    width: 120px;
+  }
+  .range-can-img {
+    width: 100%;
+    
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .formulaire1 {
+    margin: 10px;
+  }
+
+  .form1 {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .formulaire1 h2 {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  input.wpcf7-form-control.wpcf7-text,
+  .wpcf7-textarea {
+    width: 100%;
+    height: auto;
+  }
+
+  .wpcf7-textarea {
+    min-height: 180px;
+  }
+
+  input[type="submit"].wpcf7-submit {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Image décorative */
+  img.wp-image-517 {
+   display: none;
+  }
+  .range-can-img {
+    width: 100%;
+    
+  }
+}
