@@ -15,8 +15,8 @@
 .rencontre-content .rencontre-img {
   position: absolute;
   width: 145px;
-  margin-left: 23%;
-  margin-bottom: 120px;
+  left: 23%;
+  top: 12%;
 }
 
 .rencontre-text p {
@@ -43,7 +43,7 @@
 .team-grid {
   display: flex;
   margin: 0 auto;
-  justify-content:center ;
+  justify-content: center;
   align-items: flex-start;
   gap: 10%;
 }
@@ -96,11 +96,59 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 20px;
+  position: relative;
 }
 .form1 {
-  padding: 20px;
+  position: relative;
+  padding: 40px;
+  z-index: 2;
 }
 .formulaire1 h2 {
-  padding: 20px;
+  padding: 40px;
 }
+
+input.wpcf7-form-control.wpcf7-text {
+  width: 450px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.form-email {
+  margin: 20px 0 20px;
+}
+
+.wpcf7-textarea {
+  width: 450px;
+  height: 200px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+input[type="submit"].wpcf7-submit {
+  border: 0;
+  background-color: E0B9B4;
+  padding: 20px;
+  margin-top: 20px;
+  color: FFF;
+  width: 180px;
+  margin-left: 150px;
+  border-radius: 6px;
+
+  transition: 0.2s ease-in-out;
+}
+
+.wpcf7-submit:hover {
+  background-color: #3b8e46;
+  cursor: pointer;
+}
+
+img.wp-image-517 {
+  position: absolute;
+  left: 34%;
+  bottom: -55%;
+  z-index: 1;
+}
+
