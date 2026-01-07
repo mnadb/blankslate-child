@@ -1,4 +1,6 @@
-/* page : nous rencontrer */
+/* ===============================
+     PAGE : NOUS RENCONTRER
+   =============================== */
 
 /* ====== section 1 ====== */
 
@@ -264,7 +266,6 @@ img.wp-image-517 {
   }
   .range-can-img {
     width: 100%;
-    
   }
 }
 
@@ -301,10 +302,161 @@ img.wp-image-517 {
 
   /* Image décorative */
   img.wp-image-517 {
-   display: none;
+    display: none;
   }
   .range-can-img {
     width: 100%;
-    
+  }
+}
+/* ===============================
+          PAGE : COMMANDE
+   =============================== */
+
+.contain {
+  display: flex;
+  background-color: #3b8e46;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-contain {
+  /* conteneur avec les items */
+  width: 860px;
+}
+.order-h1 {
+  color: #fff;
+  margin: 40px;
+}
+.order-p1 {
+  /* votre commande */
+  color: #fff;
+  font-size: 30px;
+  padding: 30px 0;
+  text-align: start;
+}
+.flavor-scent {
+  /* la grille des parfums */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.number-quantity {
+  /* le conteneur de quatité */
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 20px;
+}
+
+/* =============== Le formulaire =============== */
+.contain-form {
+  padding: 70px 20px 80px;
+}
+
+/* la grille 2 colonnes */
+.quantity-form {
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 110px;
+  row-gap: 26px;
+  grid-template-areas:
+    "titleInfo titleDelivery"
+    "name      address"
+    "firstname postal"
+    "email     city";
+}
+
+/* Séparateur vertical au centre */
+.quantity-form::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 2px;
+  background:#fff;
+  transform: translateX(-1px);
+}
+
+/* =============== TITRES =============== */
+.title-info {
+  grid-area: titleInfo;
+  margin: 0 0 10px;
+ color: #fff;
+  font-size: 30px;
+}
+
+.title-delivery {
+  grid-area: titleDelivery;
+  align-self: start;
+}
+
+.title-delivery p {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 30px;
+}  
+  
+.quantity-form label {
+  color: #fff;
+ 
+}
+.quantity-form .wpcf7-form-control-wrap {
+ 
+  border-radius: 5px;
+} 
+
+
+
+
+/* =============== BOUTON =============== */
+.order-form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.order-form-submit input[type="submit"] {
+  background: #d9b3b1; /* rose/beige proche capture */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 70px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 768px) {
+  .quantity-form {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+    column-gap: 0;
+    grid-template-areas:
+      "titleInfo"
+      "name"
+      "firstname"
+      "email"
+      "titleDelivery"
+      "address"
+      "postal"
+      "city";
+  }
+
+  .quantity-form::after {
+    display: none; /* plus de séparateur en mobile */
+  }
+
+  .title-info,
+  .title-delivery p {
+    font-size: 34px;
+  }
+
+  .quantity-form input[type="text"],
+  .quantity-form input[type="email"] {
+    max-width: 100%;
   }
 }
