@@ -22,6 +22,7 @@ header#header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 20px;
 }
 /* Groupe menu + bouton */
 header#header nav#menu {
@@ -51,6 +52,7 @@ header#header nav#menu {
 img.custom-logo {
   width: 200px;
   height: auto;
+  margin-left: 20px;
 }
 button {
   background-color: #dc9796;
@@ -71,10 +73,8 @@ button a {
   font-family: "Syne" sans-serif;
 }
 
-/* =========================
-   TABLETTE (jusqu’à 768px)
-   ========================= */
-@media (max-width: 768px) {
+/* ==== TABLETTE (jusqu’à 768px) ===== */
+@media screen and (max-width: 768px) {
   header#header {
     height: auto;
     flex-direction: column;
@@ -86,7 +86,6 @@ button a {
   img.custom-logo {
     width: 160px;
   }
-
   #menu #menu-principal {
     flex-wrap: wrap;
     justify-content: center;
@@ -94,16 +93,12 @@ button a {
     padding: 0;
     margin: 0;
   }
-
   button {
     padding: 16px 20px;
   }
 }
-
-/* =========================
-   TÉLÉPHONE PETIT (jusqu’à 320px)
-   ========================= */
-@media (max-width: 320px) {
+/* ==== TÉLÉPHONE PETIT (jusqu’à 320px) ====*/
+@media screen and (max-width: 320px) {
   header#header {
     padding: 10px 12px;
     gap: 10px;
@@ -176,12 +171,11 @@ h1 {
 .can {
   z-index: 2;
 }
-/* ==== Media Query ==== */
-@media (max-width: 767px) {
-  /* sur tablette */
+/* ==== TÉLÉPHONE PETIT (jusqu’à 320px) ====*/
+@media screen and (max-width: 320px) {
   .leaf-right,
   .leaf-left {
-    display: none; /* option la plus stable pour 320px */
+    display: none; /* les feuilles disparaissent */
   }
 
   h1 {
@@ -240,16 +234,16 @@ h2 {
   color: #3b8e46;
 }
 
-/* ==== Media Query ==== */
-/* Mobile */
-@media (max-width: 767px) {
+/* ==== TABLETTE (jusqu’à 768px) ===== */
+
+@media screen and (max-width: 768px) {
   .gallery {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .gallery-gouts {
-    height: auto; /* évite une hauteur fixe énorme sur mobile */
+    height: auto; /* évite une hauteur fixe  */
     padding-bottom: 40px;
     clip-path: ellipse(280% 100% at top);
     padding: 50px;
@@ -266,7 +260,6 @@ h2 {
   display: flex;
   flex-direction: column;
   margin: 50px;
- 
 }
 .group-comment {
   display: flex;
@@ -281,27 +274,23 @@ h2 {
   align-items: center;
 }
 .comment-txt p {
-padding: 0 0 0 40px;
+  padding: 0 0 0 40px;
 }
 .comment-txt h3 {
- font-weight: 600;
- font-size: 20px;
- padding: 0 0 20px 40px ;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0 0 20px 40px;
 }
 
 .range-can .wp-block-group {
   display: flex;
   align-items: center;
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
-/* img canette*/
 
-
-/* ==== Media Query ==== */
-/* Téléphones petits à moyens (à partir de 320px jusqu'à 480px) */
+/* ====== Téléphones petits à moyens (à partir de 320px jusqu'à 480px) ======*/
 @media screen and (max-width: 480px) {
-
   .wp-block-group.comment {
     margin: 15px;
   }
@@ -327,12 +316,15 @@ padding: 0 0 0 40px;
     padding-bottom: 8px;
   }
 }
-
+/* ==== Le Footer ==== */
 #site-footer {
-   padding: 20px;
-   text-align: center;
-   color: black;
-   background-color: white !important;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  background-color: white !important;
 }
-
-
+a.legales {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }

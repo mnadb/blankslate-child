@@ -54,8 +54,8 @@
 @media screen and (max-width: 320px) {
   .rencontre-content {
     padding: 35px 12px;
-    height: auto; /* évite le bloc trop haut sur mobile */
-    min-height: 320px; /* garde une présence visuelle */
+    height: auto; 
+    min-height: 320px;
     clip-path: ellipse(160% 100% at top);
   }
 
@@ -113,6 +113,16 @@
   font-size: 16px;
   margin: 0;
 }
+
+/* la branche à droite */
+
+.team-leaf {
+  position: absolute;
+  width: 190px;
+  right: 220px;
+  bottom: -2px;
+  height: auto;
+}
 /* ====== Média query - tablette/téléphone ====== */
 
 @media screen and (max-width: 768px) {
@@ -138,6 +148,9 @@
     width: 140px;
     height: 140px;
     margin: 0 auto 14px;
+  }
+  .team-leaf {
+    display: none;
   }
 }
 @media screen and (max-width: 320px) {
@@ -174,16 +187,9 @@
   .team-card-role {
     font-size: 14px;
   }
-}
-
-/* la branche à droite */
-
-.team-leaf {
-  position: absolute;
-  width: 90px;
-  right: 20px;
-  bottom: -2px;
-  height: auto;
+   .team-leaf {
+    display: none;
+  }
 }
 
 /* ====== Section 3 : le formulaire ====== */
@@ -237,7 +243,7 @@ input[type="submit"].wpcf7-submit {
 img.wp-image-517 {
   position: absolute;
   left: 34%;
-  bottom: -85%;
+  bottom: -59%;
   z-index: 1;
 }
 /* ====== Média query - tablette/téléphone ====== */
@@ -259,10 +265,7 @@ img.wp-image-517 {
   }
 
   img.wp-image-517 {
-    left: 32%;
-    bottom: -62%;
-    transform: translateX(-50%);
-    width: 120px;
+   display: none;
   }
   .range-can-img {
     width: 100%;
@@ -335,23 +338,60 @@ img.wp-image-517 {
   text-align: start;
 }
 .flavor-scent {
-  /* la grille des parfums */
+  /* la grille des parfums image*/
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
 }
 
-.number-quantity {
-  /* le conteneur de quatité */
-  display: flex;
-  justify-content: space-around;
-  padding: 0 0 20px;
+/* ========== le formulaire de quantité ========== */
+
+/* Grille des parfums quantité */
+.order-grid {
+  display:flex;
+  gap: 20px;
+  justify-content:center;
+  align-items:flex-start;
+ 
+}
+/* Carte parfum */
+.order-item{
+  width:220px;
+  text-align:center;
+}
+
+.order-thumb span{
+  color:#fff;
+  font-weight:800;
+  font-size:28px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+  line-height:1;
+}
+
+/* Zone quantité */
+.order-qty{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+}
+
+/* Champ number CF7 */
+.order-qty input[type="number"]{
+  width: 39px;
+  height:54px;
+  text-align:center;
+  border:0;
+  font-size:18px;
+  outline:none;
+  margin-bottom: 30px;
 }
 
 /* =============== Le formulaire =============== */
 .contain-form {
-  padding: 70px 20px 80px;
+  padding: 70px 0px 80px;
 }
 
 /* la grille 2 colonnes */
@@ -360,9 +400,9 @@ img.wp-image-517 {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 110px;
+  column-gap: 100px;
   row-gap: 26px;
-  grid-template-areas:
+  grid-template-areas: /* les placements de champs*/
     "titleInfo titleDelivery"
     "name      address"
     "firstname postal"
@@ -377,7 +417,7 @@ img.wp-image-517 {
   bottom: 10px;
   left: 50%;
   width: 2px;
-  background:#fff;
+  background: #fff;
   transform: translateX(-1px);
 }
 
@@ -385,7 +425,7 @@ img.wp-image-517 {
 .title-info {
   grid-area: titleInfo;
   margin: 0 0 10px;
- color: #fff;
+  color: #fff;
   font-size: 30px;
 }
 
@@ -398,18 +438,11 @@ img.wp-image-517 {
   margin: 0 0 10px;
   color: #fff;
   font-size: 30px;
-}  
-  
+}
+
 .quantity-form label {
   color: #fff;
- 
 }
-.quantity-form .wpcf7-form-control-wrap {
- 
-  border-radius: 5px;
-} 
-
-
 
 
 /* =============== BOUTON =============== */
@@ -420,43 +453,126 @@ img.wp-image-517 {
 }
 
 .order-form-submit input[type="submit"] {
-  background: #d9b3b1; /* rose/beige proche capture */
+  background: #E0B9B4; 
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 16px 70px;
+  padding: 16px ;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* =============== RESPONSIVE =============== */
-@media (max-width: 768px) {
+/* ========= Base: mettre des largeurs fluides ========= */
+.order-contain {
+  width: 100%;
+  max-width: 860px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Les cartes parfums */
+.order-grid {
+display: flex;
+flex-direction: row;
+}
+
+.order-item {
+  width: 220px;
+}
+
+/* ===== 768px (tablettes & mobiles) ====== */
+@media screen and (max-width: 768px) {
+
+  .order-h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .order-p1 {
+    font-size: 22px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Grille des parfums : on réduit l'écart et on autorise le retour à la ligne */
+  .order-grid {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .order-item {
+    width: 45%; /* deux cartes par ligne environ */
+  }
+
+  /* Formulaire en 1 colonne */
   .quantity-form {
-    grid-template-columns: 1fr;
-    row-gap: 22px;
+    grid-template-columns: 1fr ;
     column-gap: 0;
+  
     grid-template-areas:
       "titleInfo"
+      "titleDelivery"
       "name"
       "firstname"
       "email"
-      "titleDelivery"
       "address"
       "postal"
       "city";
   }
 
+  /* On supprime le séparateur vertical */
   .quantity-form::after {
-    display: none; /* plus de séparateur en mobile */
+    display: none;
   }
 
   .title-info,
   .title-delivery p {
-    font-size: 34px;
-  }
-
-  .quantity-form input[type="text"],
-  .quantity-form input[type="email"] {
-    max-width: 100%;
+    text-align: center;
+    font-size: 24px;
   }
 }
+
+/* ========= ≤ 480px / 320px (petits mobiles) ========= */
+@media screen and (max-width: 480px) {
+
+  .contain {
+    align-items: stretch;
+  }
+
+  .order-contain {
+    padding: 0 12px;
+  }
+
+  .order-h1 {
+    font-size: 24px;
+  }
+
+  .order-p1 {
+    font-size: 18px;
+  }
+
+  /* Une carte par ligne */
+  .order-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-item {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .order-qty input[type="number"] {
+    width: 48px;
+    height: 48px;
+  }
+
+  .order-form-submit input[type="submit"] {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+

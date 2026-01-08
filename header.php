@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -31,7 +32,9 @@
                 ])
                 ?>
             </div>
-
+            <?php if (is_user_logged_in() && current_user_can('manage_options')) : ?>
+                <a class="admin-link" href="<?php echo esc_url(admin_url()); ?>"></a>
+            <?php endif; ?>
 
             <button>
                 <a id="txt" href="http://localhost:8080/planty/commande/">commander</a>

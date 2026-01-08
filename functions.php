@@ -44,3 +44,24 @@ function monmenu_supports()
 add_action('after_setup_theme', 'monmenu_supports');
 add_theme_support('custom-logo');
 add_theme_support('custom-menus');
+
+/** Ajoute un lien "Admin" au menu header */
+add_filter('wp_nav_menu_items', 'planty_lien_admin_menu_header', 10, 2);
+
+function planty_lien_admin_menu_header($items, $args) {
+
+    // On cible UNIQUEMENT le menu "header"
+    if (!isset($args->theme_location) || $args->theme_location !== 'header') {
+        return $items;
+    }
+
+    // Vérifie que l'utilisateur est connecté ET administrateur
+    if (is_user_logged_in() && current_user_can('manage_options')) {
+
+        $items .= '<li class="menu-item menu-item-admin">'
+               .  '<a href="' . esc_url(admin_url()) . '">Admin</a>'
+               .  '</li>';
+    }
+
+    return $items;
+}
