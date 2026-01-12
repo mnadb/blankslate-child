@@ -32,13 +32,7 @@
                 ])
                 ?>
             </div>
-            <?php if (is_user_logged_in() && current_user_can('manage_options')) : ?>
-                <a class="admin-link" href="<?php echo esc_url(admin_url()); ?>"></a>
-            <?php endif; ?>
 
-            <button>
-                <a id="txt" href="http://localhost:8080/planty/commande/">commander</a>
-            </button>
         </nav>
     </header>
 
