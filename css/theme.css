@@ -18,8 +18,8 @@
 .rencontre-content .rencontre-img {
   position: absolute;
   width: 100%;
-  left: -32%;
-  top: 12%;
+  left: -25%;
+  top: 10%;
 }
 
 .rencontre-text p {
@@ -27,7 +27,8 @@
 }
 /* ====== Media Query - tablette/téléphone ====== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+  /* à partir de 1200, changement des objets en position absolute */
   .rencontre-content {
     padding: 50px 20px;
     height: auto;
@@ -37,6 +38,8 @@
 
   .rencontre-content .rencontre-img {
     position: static;
+    width: 120px;
+    margin-left: 35%;
   }
 
   .rencontre-text p {
@@ -56,10 +59,6 @@
     clip-path: ellipse(160% 100% at top);
   }
 
-  .rencontre-content .rencontre-img {
-    position: static;
-  }
-
   .rencontre-text p {
     font-size: 1em;
     line-height: 1.4;
@@ -71,7 +70,6 @@
 .team {
   padding: 60px 20px 70px;
   position: relative;
-  overflow: hidden;
 }
 .team-h2 {
   text-align: center;
@@ -112,9 +110,9 @@
 
 .team-leaf {
   position: absolute;
-  width: 190px;
+  width: 200px;
   right: 5%;
-  bottom: -2px;
+  bottom: -20px;
   height: auto;
 }
 /* ====== Média query - tablette/téléphone ====== */
@@ -194,7 +192,6 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
-  position: relative;
 }
 .form1 {
   position: relative;
@@ -206,7 +203,8 @@
 }
 
 input.wpcf7-form-control.wpcf7-text {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: 60px;
   border: none;
   border-radius: 5px;
@@ -217,7 +215,8 @@ input.wpcf7-form-control.wpcf7-text {
 }
 
 .wpcf7-textarea {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: 250px;
   border: none;
   border-radius: 5px;
@@ -228,19 +227,25 @@ input[type="submit"].wpcf7-submit {
   background-color: #e0b9b4;
   padding: 20px;
   margin-top: 20px;
-  color: FFF;
-  width: 180px;
-  margin-left: 135px;
+  color: #fff;
+  width: 100%;
+  max-width: 180px;
+  margin-left: 48px;
   border-radius: 6px;
 }
 
 img.wp-image-517 {
   position: absolute;
-  left: 24%;
-  bottom: -88%;
+  left: 38%;
+  top: 127%;
   z-index: 1;
 }
 /* ====== Média query - tablette/téléphone ====== */
+@media screen and (max-width: 1600px) { 
+img.wp-image-517 {
+  display: none;
+}
+}
 
 @media screen and (max-width: 768px) {
   .form1 {
@@ -291,12 +296,6 @@ img.wp-image-517 {
     min-height: 180px;
   }
 
-  input[type="submit"].wpcf7-submit {
-    width: 100%;
-    margin-left: 0;
-    text-align: center;
-  }
-
   /* Image décorative */
   img.wp-image-517 {
     display: none;
@@ -318,7 +317,8 @@ img.wp-image-517 {
 }
 .order-contain {
   /* conteneur avec les items */
-  width: 860px;
+  width: 100%;
+  max-width: 860px;
 }
 .order-h1 {
   color: #fff;
@@ -331,57 +331,43 @@ img.wp-image-517 {
   padding: 30px 0;
   text-align: start;
 }
-.flavor-scent {
-  /* la grille des parfums image*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-}
 
 /* ========== le formulaire de quantité ========== */
 
 /* Grille des parfums quantité */
-.order-grid {
- display: flex;
- justify-content: center;
-}
-/* Carte parfum */
-.order-item {
+.grid_gallery_qty {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap:50px;
- 
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center; /* centre image + input dans chaque colonne */
+  align-items: start;
 }
 
-.order-thumb span {
-  color: #fff;
-  font-weight: 800;
-  font-size: 28px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-  line-height: 1;
+/* Chaque parfum (image + input) */
+.grid_gallery_qty .order-item img {
+  display: block;
+  width: 170px;
+  height: auto;
 }
 
-/* Zone quantité */
-.order-qty {
-  /*margin-top: 18px;*/
-  display: flex;
-  justify-content: center;
-}
-
-/* Champ number CF7 
-.order-qty input[type="number"] {
+/* Le petit carré blanc avec le chiffre */
+.grid_gallery_qty .qty-input {
+  margin: 30px; /* distance sous l’image */
   width: 39px;
-  height: 54px;
+  height: 56px;
+  background: #ffffff;
+  font-size: 20px;
   text-align: center;
-  border: 0;
-  font-size: 18px;
-  outline: none;
-  margin-bottom: 30px;
+  border: none;
+  margin-inline-start: 60px;
 }
-*/
+
+/* Retirer les flèches sur Chrome / Edge */
+.grid_gallery_qty .qty-input::-webkit-outer-spin-button,
+.grid_gallery_qty .qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* =============== Le formulaire =============== */
 .contain-form {
   padding: 70px 0px 80px;
@@ -397,9 +383,9 @@ img.wp-image-517 {
   row-gap: 26px;
   grid-template-areas: /* les placements de champs*/
     "titleInfo titleDelivery"
-    "name      address"
+    "name address"
     "firstname postal"
-    "email     city";
+    "email city";
 }
 
 /* Séparateur vertical au centre */
@@ -458,12 +444,10 @@ input.wpcf7-form-control.wpcf7-text {
   border-radius: 4px;
   padding: 16px;
   font-size: 16px;
-  cursor: pointer;
 }
 
-/* ========= Base: mettre des largeurs fluides ========= */
 .order-contain {
-  width: 100%;
+  width: 100%; /*des largeurs fluides*/
   max-width: 860px;
   padding: 0 16px;
   box-sizing: border-box;
@@ -480,7 +464,7 @@ input.wpcf7-form-control.wpcf7-text {
 }
 
 /* ===== 768px (tablettes & mobiles) ====== */
-@media screen and (max-width: 864px) {
+@media screen and (max-width: 768px) {
   .order-h1 {
     margin: 20px 0;
     text-align: center;
@@ -489,24 +473,21 @@ input.wpcf7-form-control.wpcf7-text {
 
   .order-p1 {
     font-size: 22px;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
   }
-  .flavor-scent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+
   /* Grille des parfums : on réduit l'écart et on autorise le retour à la ligne */
-  .order-grid {
+  .grid_gallery_qty {
     display: flex;
     flex-direction: column;
     gap: 12px;
     justify-content: center;
+    margin-left: 28%;
   }
 
   .order-item {
-    width: 45%; /* deux cartes par ligne environ */
+    align-items: center;
   }
 
   /* Formulaire en 1 colonne */
@@ -516,10 +497,10 @@ input.wpcf7-form-control.wpcf7-text {
 
     grid-template-areas:
       "titleInfo"
-      "titleDelivery"
       "name"
       "firstname"
       "email"
+      "titleDelivery"
       "address"
       "postal"
       "city";
@@ -540,7 +521,8 @@ input.wpcf7-form-control.wpcf7-text {
 /* ========= ≤ 480px / 320px (petits mobiles) ========= */
 @media screen and (max-width: 480px) {
   .contain {
-    align-items: stretch;
+    width: 100%;
+    align-items: center;
   }
 
   .order-contain {
@@ -572,6 +554,7 @@ input.wpcf7-form-control.wpcf7-text {
   }
 
   .order-form-submit input[type="submit"] {
+    margin-left: 20px;
     width: 100%;
     max-width: 260px;
   }
