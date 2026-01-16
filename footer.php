@@ -1,5 +1,5 @@
 <footer id="site-footer" class="header-footer-group">
-<a href="http://localhost:8080/planty/mentions-legales/" class="legales">Mentions légales</a>
+<a href="mentions-legales" class="legales">Mentions légales</a>
 </footer>
 
 

@@ -197,6 +197,15 @@
   position: relative;
   padding: 40px;
   z-index: 2;
+  overflow: visible;
+}
+.form1 .feuille-1 {
+    position: absolute;
+    z-index: -1;
+    bottom: 100px;
+    left: -40px;
+    width: 120px;
+    height: auto;
 }
 .formulaire1 h2 {
   padding: 40px;
@@ -382,11 +391,29 @@ img.wp-image-517 {
   column-gap: 100px;
   row-gap: 26px;
   grid-template-areas: /* les placements de champs*/
-    "titleInfo titleDelivery"
-    "name address"
-    "firstname postal"
-    "email city";
+    "titleInfo  titleDelivery"
+    "name       address"
+    "firstname  postal"
+    "email      city";
 }
+.order-form-firstname {
+    order: 3;
+  }
+  .order-form-name {
+    order: 1;
+  }
+  .order-form-address {
+    order: 2;
+  }
+  .order-form-postal {
+    order: 4;
+  }
+  .order-form-e-mail {
+    order: 5;
+  }
+  .order-form-city {
+    order: 6;
+  }
 
 /* Séparateur vertical au centre */
 .quantity-form::after {
