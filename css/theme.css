@@ -38,8 +38,8 @@
 
   .rencontre-content .rencontre-img {
     position: static;
-    width: 120px;
-    margin-left: 35%;
+    width:100%;
+   
   }
 
   .rencontre-text p {
@@ -47,7 +47,7 @@
     line-height: 1.5;
   }
   .rencontre-content-h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 
@@ -63,6 +63,7 @@
     font-size: 1em;
     line-height: 1.4;
   }
+  
 }
 
 /* ====== section 2 ====== */
@@ -116,8 +117,13 @@
   height: auto;
 }
 /* ====== Média query - tablette/téléphone ====== */
-
 @media screen and (max-width: 1300px) {
+  .team-leaf {
+   display: none;
+  }
+  
+}
+@media screen and (max-width: 768px) {
   .team {
     padding: 50px 20px 60px;
   }
@@ -199,14 +205,7 @@
   z-index: 2;
   overflow: visible;
 }
-.form1 .feuille-1 {
-    position: absolute;
-    z-index: -1;
-    bottom: 100px;
-    left: -40px;
-    width: 120px;
-    height: auto;
-}
+
 .formulaire1 h2 {
   padding: 40px;
 }
@@ -242,20 +241,16 @@ input[type="submit"].wpcf7-submit {
   margin-left: 48px;
   border-radius: 6px;
 }
-
-img.wp-image-517 {
-  position: absolute;
-  left: 38%;
-  top: 127%;
-  z-index: 1;
+.form1 .feuille-1 {
+    position: absolute;
+    z-index: -1;
+    bottom: 95px;
+    left: -38px;
+    width: 160px;
+    height: auto;
 }
+
 /* ====== Média query - tablette/téléphone ====== */
-@media screen and (max-width: 1600px) { 
-img.wp-image-517 {
-  display: none;
-}
-}
-
 @media screen and (max-width: 768px) {
   .form1 {
     padding: 30px;
@@ -271,13 +266,13 @@ img.wp-image-517 {
     display: block;
     margin: 20px auto 0;
   }
-
-  img.wp-image-517 {
-    display: none;
-  }
+  .form1 .feuille-1 {
+  overflow: visible;
+}
   .range-can-img {
     width: 100%;
   }
+ 
 }
 
 @media screen and (max-width: 320px) {
@@ -305,10 +300,6 @@ img.wp-image-517 {
     min-height: 180px;
   }
 
-  /* Image décorative */
-  img.wp-image-517 {
-    display: none;
-  }
   .range-can-img {
     width: 100%;
   }
@@ -532,7 +523,24 @@ input.wpcf7-form-control.wpcf7-text {
       "postal"
       "city";
   }
-
+.order-form-firstname {
+    order: 2;
+  }
+  .order-form-name {
+    order: 1;
+  }
+  .order-form-address {
+    order: 4;
+  }
+  .order-form-postal {
+    order: 5;
+  }
+  .order-form-e-mail {
+    order: 3;
+  }
+  .order-form-city {
+    order: 6;
+  }
   /* On supprime le séparateur vertical */
   .quantity-form::after {
     display: none;
@@ -580,9 +588,5 @@ input.wpcf7-form-control.wpcf7-text {
     height: 48px;
   }
 
-  .order-form-submit input[type="submit"] {
-    margin-left: 20px;
-    width: 100%;
-    max-width: 260px;
-  }
+  
 }
