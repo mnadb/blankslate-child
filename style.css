@@ -9,7 +9,6 @@ Tags: boisson, vente
 
 */
 
-
 body * {
   margin: 0;
   padding: 0;
@@ -39,10 +38,9 @@ header#header nav#menu {
   margin: 0;
   padding: 0;
   list-style: none;
-  
 }
 /* Les items */
- a {
+a {
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -56,7 +54,7 @@ header#header nav#menu {
   order: 2;
 }
 #menu #menu-principal > li > a:hover {
-  color: #dc9796;
+  font-weight: bold;
 }
 
 img.custom-logo {
@@ -74,7 +72,7 @@ img.custom-logo {
   transition: color 0.2s ease;
 }
 .txt:hover {
-  background-color: #3b8e46;
+  background-color: #c02e44;
 }
 .txt a {
   text-decoration: none;
@@ -224,17 +222,20 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
   gap: 38px;
 }
+/* Le bouton */
 
-.btn-cta {
+.custom_button {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  margin-top: 40px !important;
 }
-.btn {
-  background-color: #e0b9b4;
-  cursor: pointer;
+.wp-block-button.custom_button_commander {
+  padding: 40px !important;
+  height: 55px;
 }
-
+.wp-block-button__link:hover {
+  background-color: #c02e44;
+}
 
 /* ==== TABLETTE (jusqu’à 768px) ===== */
 
@@ -291,7 +292,6 @@ h2 {
   max-width: 100%;
 }
 
-
 @media screen and (max-width: 768px) {
   .wp-block-group.comment {
     margin: 15px;
@@ -319,7 +319,6 @@ h2 {
     padding-bottom: 8px;
   }
 }
-
 
 /* ==== Le Footer ==== */
 #site-footer {

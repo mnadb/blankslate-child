@@ -240,7 +240,12 @@ input[type="submit"].wpcf7-submit {
   max-width: 180px;
   margin-left: 48px;
   border-radius: 6px;
+ 
 }
+input[type="submit"].wpcf7-submit:hover {
+  background-color: #C02E44;
+}
+
 .form1 .feuille-1 {
     position: absolute;
     z-index: -1;
@@ -462,8 +467,12 @@ input.wpcf7-form-control.wpcf7-text {
   border-radius: 4px;
   padding: 16px;
   font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
 }
-
+.order-form-submit input[type="submit"]:hover {
+  background-color:#C02E44;
+}
 .order-contain {
   width: 100%; /*des largeurs fluides*/
   max-width: 860px;
