@@ -189,33 +189,14 @@
 
 /* ====== Section 3 : le formulaire ====== */
 
-/*.formulaire1 {
- display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
- 
-}*/
-
-/*.form_contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-    justify-content: center;
-}*/
-
-
 .wp-block-contact-form-7-contact-form-selector {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
-  
- position: relative;
+  position: relative;
   z-index: 2;
-  left: 40px;
 }
 
 .formulaire1 h2 {
@@ -248,8 +229,6 @@ input[type="submit"].wpcf7-submit {
   padding: 20px;
   margin-top: 20px;
   color: #fff;
-  
-  
 
   border-radius: 6px;
 }
@@ -323,23 +302,11 @@ input[type="submit"].wpcf7-submit:hover {
           PAGE : COMMANDE
    =============================== */
 
-.contain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #3b8e46;
-  
-}
-.order-contain {
-  /* conteneur avec les items */
-  width: 100%;
- 
-}
-.order-h1 {
+.order_h1 {
+  text-align: center;
   color: #fff;
-  margin: 40px;
 }
-.order-p1 {
+.order_p {
   /* votre commande */
   color: #fff;
   font-size: 30px;
@@ -428,9 +395,8 @@ input[type="submit"].wpcf7-submit:hover {
   top: 10px;
   bottom: 10px;
   left: 50%;
-  width: 2px;
+  width: 1px;
   background: #fff;
-  transform: translateX(-1px);
 }
 input.wpcf7-form-control.wpcf7-text {
   width: 100%;
@@ -467,13 +433,14 @@ input.wpcf7-form-control.wpcf7-text {
 .order-form-submit {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-left: 70px;
 }
 
 .order-form-submit input[type="submit"] {
   background: #e0b9b4;
   color: #fff;
   border: none;
+  width: 198px;
   border-radius: 4px;
   padding: 16px;
   font-size: 16px;
@@ -483,48 +450,22 @@ input.wpcf7-form-control.wpcf7-text {
 .order-form-submit input[type="submit"]:hover {
   background-color: #c02e44;
 }
-.order-contain {
-  width: 100%; /*des largeurs fluides*/
-  max-width: 860px;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-
-/* Les cartes parfums */
-.order-grid {
-  display: flex;
-  flex-direction: row;
-}
-
-.order-item {
-  width: 220px;
-}
 
 /* ===== 768px (tablettes & mobiles) ====== */
 @media screen and (max-width: 768px) {
-  .order-h1 {
-    margin: 20px 0;
-    text-align: center;
-    font-size: 28px;
-  }
-
-  .order-p1 {
-    font-size: 22px;
-    padding: 30px 0;
-    text-align: center;
+  .form_command {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Grille des parfums : on réduit l'écart et on autorise le retour à la ligne */
   .grid_gallery_qty {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 28%;
-  }
-
-  .order-item {
-    align-items: center;
   }
 
   /* Formulaire en 1 colonne */
@@ -568,42 +509,19 @@ input.wpcf7-form-control.wpcf7-text {
   .title-info,
   .title-delivery p {
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
+  }
+  .order-form-submit {
+    margin-left: 15px;
   }
 }
 
-/* ========= ≤ 480px / 320px (petits mobiles) ========= */
-@media screen and (max-width: 480px) {
-  .contain {
-    width: 100%;
+/* ========= ≤320px  ========= */
+@media screen and (max-width: 468px) {
+  .form_command {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
     align-items: center;
-  }
-
-  .order-contain {
-    padding: 0 12px;
-  }
-
-  .order-h1 {
-    font-size: 24px;
-  }
-
-  .order-p1 {
-    font-size: 18px;
-  }
-
-  /* Une carte par ligne */
-  .order-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .order-item {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .order-qty input[type="number"] {
-    width: 48px;
-    height: 48px;
   }
 }
