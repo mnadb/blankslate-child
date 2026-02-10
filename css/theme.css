@@ -189,18 +189,33 @@
 
 /* ====== Section 3 : le formulaire ====== */
 
-.formulaire1 {
+/*.formulaire1 {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+ 
+}*/
+
+/*.form_contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+    justify-content: center;
+}*/
+
+
+.wp-block-contact-form-7-contact-form-selector {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-}
-.form1 {
-  position: relative;
-  padding: 40px;
+  padding: 60px 20px;
+  
+ position: relative;
   z-index: 2;
-  overflow: visible;
+  left: 40px;
 }
 
 .formulaire1 h2 {
@@ -233,9 +248,9 @@ input[type="submit"].wpcf7-submit {
   padding: 20px;
   margin-top: 20px;
   color: #fff;
-  width: 100%;
-  max-width: 180px;
-  margin-left: 48px;
+  
+  
+
   border-radius: 6px;
 }
 input[type="submit"].wpcf7-submit:hover {
@@ -310,15 +325,15 @@ input[type="submit"].wpcf7-submit:hover {
 
 .contain {
   display: flex;
-  background-color: #3b8e46;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-color: #3b8e46;
+  
 }
 .order-contain {
   /* conteneur avec les items */
   width: 100%;
-  max-width: 860px;
+ 
 }
 .order-h1 {
   color: #fff;

@@ -198,11 +198,9 @@ h1 {
 
 .gallery-gouts {
   display: flex;
+  align-content: center;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  object-fit: cover;
-  height: 1000px;
   clip-path: ellipse(180% 100% at top); /* bord courbé*/
 }
 h2 {
@@ -217,22 +215,13 @@ h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
 }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 38px;
-}
+
 /* Le bouton */
 
 .custom_button {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px !important;
+ padding-bottom: 20px;
 }
-.wp-block-button.custom_button_commander {
-  padding: 40px !important;
-  height: 55px;
-}
+
 .wp-block-button__link:hover {
   background-color: #c02e44 !important;
 }
@@ -240,10 +229,6 @@ h2 {
 /* ==== TABLETTE (jusqu’à 768px) ===== */
 
 @media screen and (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 
   .gallery-gouts {
     height: auto; /* évite une hauteur fixe  */
@@ -255,6 +240,19 @@ h2 {
   h2 {
     font-size: 20px;
     padding: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .gallery-gouts {
+    display: flex;
+    flex-direction: column;
+    clip-path: ellipse(400% 100% at top);
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 18px;
+    padding: 15px;
   }
 }
 
@@ -332,3 +330,4 @@ a.legales {
   text-decoration: none;
   text-align: center;
 }
+

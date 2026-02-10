@@ -1,4 +1,3 @@
-<?php wp_body_open(); ?>
 <?php get_header();  // inclure le fichier header.php 
 ?>
 
@@ -11,7 +10,6 @@
 
 
 </main>
-<?php get_footer();  // inclure le fichier footer.php 
-?>
 
-<?php wp_footer(); ?>
+    <?php get_footer();  // inclure le fichier footer.php 
+    ?>
