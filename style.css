@@ -14,7 +14,7 @@ body * {
   padding: 0;
   box-sizing: border-box;
   font-family: "Syne", sans-serif;
-  overflow: hidden; /* pour les décorations en absolute */
+ overflow: hidden;
 }
 
 /* ==== Header ==== */
