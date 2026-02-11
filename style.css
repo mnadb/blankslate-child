@@ -113,12 +113,6 @@ img.custom-logo {
 }
 /* ==== Section 1 ==== */
 
-h1 {
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 800;
-  margin: 20px;
-}
 
 .hero {
   display: flex;
@@ -128,13 +122,28 @@ h1 {
   background-color: #ece2da;
   clip-path: ellipse(150% 100% at top); /* bord courbé*/
 }
+
+.h1_hero {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  padding: 50px;
+ color: #3B8E46;
+}
+
 .can-leaf .wp-block-group__inner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
+.hero_leaf {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 20px;
+}
 .leaf-right,
 .leaf-left {
   position: absolute;
@@ -143,11 +152,13 @@ h1 {
 /* Position de la feuille de gauche */
 .leaf-left {
   left: 50%;
+  top: 40%;
   transform: translate(-15px); /* décale vers la gauche*/
 }
 /* Position de la feuille de droite */
 .leaf-right {
   left: 50%;
+  top: 38%;
   transform: translate(-360px); /* décale vers la droite*/
 }
 /* La canette en premier-plan */
@@ -156,13 +167,11 @@ h1 {
 }
 @media screen and (max-width: 740px) {
   /* Titre */
-  h1 {
+ .h1_hero {
     font-size: 20px;
     text-align: center;
-    margin: 20px 15px;
-    line-height: 1.2;
-  }
-
+    padding: 30px;
+ }
   /* Hero */
   .hero {
     padding: 40px 15px;
