@@ -15,6 +15,13 @@
   overflow: hidden;
   clip-path: ellipse(140% 100% at top); /* bord courbé*/
 }
+
+.rencontre-content-h1 {
+  color: #d2776a;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0 0 20px;
+}
 .rencontre-content .rencontre-img {
   position: absolute;
   width: 100%;
@@ -158,6 +165,7 @@
 }
 
 .img_decoration {
+  background-attachment: fixed;
   position: absolute;
   width: 150px;
   left: 47%;
