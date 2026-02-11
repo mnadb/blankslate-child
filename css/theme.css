@@ -27,22 +27,23 @@
 }
 /* ====== Media Query - tablette/téléphone ====== */
 
-@media screen and (max-width: 1200px) {
-  /* à partir de 1200, changement des objets en position absolute */
+@media screen and (max-width: 768px) {
   .rencontre-content {
     padding: 50px 20px;
     height: auto;
     min-height: 380px;
     clip-path: ellipse(150% 100% at top);
   }
-
+.rencontre-content-h1 {
+    font-size: 1.2em ;
+  }
   .rencontre-content .rencontre-img {
     position: static;
     width: 100%;
   }
 
   .rencontre-text p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.5;
   }
   .rencontre-content-h1 {
@@ -50,19 +51,6 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .rencontre-content {
-    padding: 35px 12px;
-    height: auto;
-    min-height: 320px;
-    clip-path: ellipse(160% 100% at top);
-  }
-
-  .rencontre-text p {
-    font-size: 1em;
-    line-height: 1.4;
-  }
-}
 
 /* ====== section 2 ====== */
 
@@ -121,66 +109,10 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .team {
-    padding: 50px 20px 60px;
-  }
-
-  .team-h2 {
-    font-size: 28px;
-    margin: 0 0 35px;
-  }
-
-  .team-grid {
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .team-card {
-    width: 200px;
-  }
-
-  .team-card-img {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 14px;
-  }
-  .team-leaf {
-    display: none;
-  }
-}
-@media screen and (max-width: 320px) {
-  .team {
-    padding: 40px 12px 50px;
-  }
-
-  .team-h2 {
-    font-size: 22px;
-    margin: 0 0 25px;
-  }
-
   .team-grid {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-  }
-
-  .team-card {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .team-card-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 12px;
-  }
-
-  .team-card-name {
-    font-size: 16px;
-  }
-
-  .team-card-role {
-    font-size: 14px;
   }
   .team-leaf {
     display: none;
@@ -189,119 +121,103 @@
 
 /* ====== Section 3 : le formulaire ====== */
 
-.wp-block-contact-form-7-contact-form-selector {
+#form_contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 60px 20px;
+}
+.form_contact h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 40px;
+}
+.form {
+  width: 500px;
+  max-width: 500px;
   position: relative;
   z-index: 2;
 }
 
-.formulaire1 h2 {
-  padding: 40px;
-}
-
-input.wpcf7-form-control.wpcf7-text {
+.form-name input[type="text"],
+.form-email input[type="email"] {
   width: 100%;
-  max-width: 450px;
   height: 60px;
   border: none;
   border-radius: 5px;
   margin: 10px 0;
-}
-.form-email {
-  margin: 20px 0 20px;
+
 }
 
-.wpcf7-textarea {
+.form-message textarea {
   width: 100%;
-  max-width: 450px;
   height: 250px;
   border: none;
   border-radius: 5px;
   margin: 10px 0;
 }
+
+.img_decoration {
+  position: absolute;
+  width: 150px;
+  left: 47%;
+  top: 152%;
+  transform: translateX(-180%);
+  
+}
+
 input[type="submit"].wpcf7-submit {
   border: 0;
   background-color: #e0b9b4;
-  padding: 20px;
-  margin-top: 20px;
+  display: block;
+  padding: 20px 40px;
+  margin: 20px auto 0;
+  font-size: 16px;
   color: #fff;
-
   border-radius: 6px;
+  width: auto;
+  cursor: pointer;
 }
 input[type="submit"].wpcf7-submit:hover {
   background-color: #c02e44;
 }
 
-.form1 .feuille-1 {
-  position: absolute;
-  z-index: -1;
-  bottom: 95px;
-  left: -38px;
-  width: 160px;
-  height: auto;
-}
+
 
 /* ====== Média query - tablette/téléphone ====== */
 @media screen and (max-width: 768px) {
-  .form1 {
-    padding: 30px;
+ 
+ .form {
+    width: 350px;
+    max-width: 350px;
   }
-
-  input.wpcf7-form-control.wpcf7-text,
-  .wpcf7-textarea {
-    width: 100%;
-  }
-
   input[type="submit"].wpcf7-submit {
     margin-left: 0;
     display: block;
     margin: 20px auto 0;
   }
-  .form1 .feuille-1 {
-    overflow: visible;
-  }
-  .range-can-img {
-    width: 100%;
+  .img_decoration {
+    display: none;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .formulaire1 {
-    margin: 10px;
-  }
-
-  .form1 {
-    padding: 20px;
-    width: 100%;
-  }
-
-  .formulaire1 h2 {
-    padding: 20px 10px;
-    text-align: center;
-  }
-
-  input.wpcf7-form-control.wpcf7-text,
-  .wpcf7-textarea {
-    width: 100%;
-    height: auto;
-  }
-
-  .wpcf7-textarea {
-    min-height: 180px;
-  }
-
-  .range-can-img {
-    width: 100%;
+  
+  .img_decoration {
+    display: none;
   }
 }
 /* ===============================
           PAGE : COMMANDE
    =============================== */
 
+.wp-block-contact-form-7-contact-form-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
 .order_h1 {
   text-align: center;
   font-size: 40px;
@@ -400,7 +316,12 @@ input[type="submit"].wpcf7-submit:hover {
   width: 1px;
   background: #fff;
 }
-input.wpcf7-form-control.wpcf7-text {
+.order-form-name input[type="text"],
+.order-form-firstname input[type="text"],
+.order-form-address input[type="text"],
+.order-form-postal input[type="text"],
+.order-form-e-mail input[type="email"],
+.order-form-city input[type="text"] {
   width: 100%;
   height: 60px;
   border: none;
