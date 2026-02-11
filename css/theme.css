@@ -304,12 +304,14 @@ input[type="submit"].wpcf7-submit:hover {
 
 .order_h1 {
   text-align: center;
+  font-size: 40px;
+  font-weight: 900;
   color: #fff;
+  padding: 60px 20px 40px;
 }
 .order_p {
-  /* votre commande */
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   padding: 30px 0;
   text-align: start;
 }
@@ -320,7 +322,7 @@ input[type="submit"].wpcf7-submit:hover {
 .grid_gallery_qty {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center; /* centre image + input dans chaque colonne */
+  justify-items: center;
   align-items: start;
 }
 
@@ -333,7 +335,7 @@ input[type="submit"].wpcf7-submit:hover {
 
 /* Le petit carré blanc avec le chiffre */
 .grid_gallery_qty .qty-input {
-  margin: 30px; /* distance sous l’image */
+  margin: 30px;
   width: 39px;
   height: 56px;
   background: #ffffff;
@@ -519,9 +521,21 @@ input.wpcf7-form-control.wpcf7-text {
 /* ========= ≤320px  ========= */
 @media screen and (max-width: 468px) {
   .form_command {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order_h1 {
+    font-size: 25px;
+    padding: 40px 20px 30px;
+  }
+  .grid_gallery_qty {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  p.order_p {
+    font-size: 25px;
   }
 }
