@@ -14,7 +14,7 @@ body * {
   padding: 0;
   box-sizing: border-box;
   font-family: "Syne", sans-serif;
- overflow: hidden;
+  overflow: hidden;
 }
 
 /* ==== Header ==== */
@@ -113,7 +113,6 @@ img.custom-logo {
 }
 /* ==== Section 1 ==== */
 
-
 .hero {
   display: flex;
   justify-content: center;
@@ -129,7 +128,7 @@ img.custom-logo {
   font-size: 40px;
   font-weight: 800;
   padding: 50px;
- color: #3B8E46;
+  color: #3b8e46;
 }
 
 .can-leaf .wp-block-group__inner-container {
@@ -167,11 +166,11 @@ img.custom-logo {
 }
 @media screen and (max-width: 740px) {
   /* Titre */
- .h1_hero {
+  .h1_hero {
     font-size: 20px;
     text-align: center;
     padding: 30px;
- }
+  }
   /* Hero */
   .hero {
     padding: 40px 15px;
@@ -185,7 +184,6 @@ img.custom-logo {
     max-width: 520px;
   }
 
-  /* Feuilles : on les rapproche du centre*/
   .leaf-left,
   .leaf-right {
     display: none;
@@ -228,7 +226,7 @@ h2 {
 /* Le bouton */
 
 .custom_button {
- padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .wp-block-button__link:hover {
@@ -238,7 +236,6 @@ h2 {
 /* ==== TABLETTE (jusqu’à 768px) ===== */
 
 @media screen and (max-width: 768px) {
-
   .gallery-gouts {
     height: auto; /* évite une hauteur fixe  */
     padding-bottom: 40px;
@@ -266,6 +263,7 @@ h2 {
 }
 
 /* ==== Section 4 ==== */
+
 .wp-block-group.comment {
   display: flex;
   flex-direction: column;
@@ -339,4 +337,3 @@ a.legales {
   text-decoration: none;
   text-align: center;
 }
-
