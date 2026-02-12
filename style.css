@@ -14,7 +14,7 @@ body * {
   padding: 0;
   box-sizing: border-box;
   font-family: "Syne", sans-serif;
-  overflow: hidden; /* pour les décorations en absolute */
+  overflow: hidden;
 }
 
 /* ==== Header ==== */
@@ -113,13 +113,6 @@ img.custom-logo {
 }
 /* ==== Section 1 ==== */
 
-h1 {
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 800;
-  margin: 20px;
-}
-
 .hero {
   display: flex;
   justify-content: center;
@@ -128,13 +121,28 @@ h1 {
   background-color: #ece2da;
   clip-path: ellipse(150% 100% at top); /* bord courbé*/
 }
+
+.h1_hero {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  padding: 50px;
+  color: #3b8e46;
+}
+
 .can-leaf .wp-block-group__inner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
+.hero_leaf {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 20px;
+}
 .leaf-right,
 .leaf-left {
   position: absolute;
@@ -143,11 +151,13 @@ h1 {
 /* Position de la feuille de gauche */
 .leaf-left {
   left: 50%;
+  top: 40%;
   transform: translate(-15px); /* décale vers la gauche*/
 }
 /* Position de la feuille de droite */
 .leaf-right {
   left: 50%;
+  top: 38%;
   transform: translate(-360px); /* décale vers la droite*/
 }
 /* La canette en premier-plan */
@@ -156,13 +166,11 @@ h1 {
 }
 @media screen and (max-width: 740px) {
   /* Titre */
-  h1 {
+  .h1_hero {
     font-size: 20px;
     text-align: center;
-    margin: 20px 15px;
-    line-height: 1.2;
+    padding: 30px;
   }
-
   /* Hero */
   .hero {
     padding: 40px 15px;
@@ -176,7 +184,6 @@ h1 {
     max-width: 520px;
   }
 
-  /* Feuilles : on les rapproche du centre*/
   .leaf-left,
   .leaf-right {
     display: none;
@@ -198,11 +205,9 @@ h1 {
 
 .gallery-gouts {
   display: flex;
+  align-content: center;
   justify-content: center;
-  align-items: center;
   width: 100%;
-  object-fit: cover;
-  height: 1000px;
   clip-path: ellipse(180% 100% at top); /* bord courbé*/
 }
 h2 {
@@ -217,22 +222,13 @@ h2 {
   text-align: center;
   font-family: "Syne", sans-serif;
 }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 38px;
-}
+
 /* Le bouton */
 
 .custom_button {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px !important;
+  padding-bottom: 20px;
 }
-.wp-block-button.custom_button_commander {
-  padding: 40px !important;
-  height: 55px;
-}
+
 .wp-block-button__link:hover {
   background-color: #c02e44 !important;
 }
@@ -240,11 +236,6 @@ h2 {
 /* ==== TABLETTE (jusqu’à 768px) ===== */
 
 @media screen and (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .gallery-gouts {
     height: auto; /* évite une hauteur fixe  */
     padding-bottom: 40px;
@@ -257,8 +248,22 @@ h2 {
     padding: 20px;
   }
 }
+@media screen and (max-width: 320px) {
+  .gallery-gouts {
+    display: flex;
+    flex-direction: column;
+    clip-path: ellipse(400% 100% at top);
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
 
 /* ==== Section 4 ==== */
+
 .wp-block-group.comment {
   display: flex;
   flex-direction: column;

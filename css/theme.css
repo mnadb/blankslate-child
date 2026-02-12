@@ -15,6 +15,13 @@
   overflow: hidden;
   clip-path: ellipse(140% 100% at top); /* bord courbé*/
 }
+
+.rencontre-content-h1 {
+  color: #d2776a;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0 0 20px;
+}
 .rencontre-content .rencontre-img {
   position: absolute;
   width: 100%;
@@ -27,40 +34,27 @@
 }
 /* ====== Media Query - tablette/téléphone ====== */
 
-@media screen and (max-width: 1200px) {
-  /* à partir de 1200, changement des objets en position absolute */
+@media screen and (max-width: 768px) {
   .rencontre-content {
     padding: 50px 20px;
     height: auto;
     min-height: 380px;
     clip-path: ellipse(150% 100% at top);
   }
-
+  .rencontre-content-h1 {
+    font-size: 1.2em;
+  }
   .rencontre-content .rencontre-img {
     position: static;
     width: 100%;
   }
 
   .rencontre-text p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.5;
   }
   .rencontre-content-h1 {
     font-size: 1.4em;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .rencontre-content {
-    padding: 35px 12px;
-    height: auto;
-    min-height: 320px;
-    clip-path: ellipse(160% 100% at top);
-  }
-
-  .rencontre-text p {
-    font-size: 1em;
-    line-height: 1.4;
   }
 }
 
@@ -121,66 +115,10 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .team {
-    padding: 50px 20px 60px;
-  }
-
-  .team-h2 {
-    font-size: 28px;
-    margin: 0 0 35px;
-  }
-
-  .team-grid {
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .team-card {
-    width: 200px;
-  }
-
-  .team-card-img {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 14px;
-  }
-  .team-leaf {
-    display: none;
-  }
-}
-@media screen and (max-width: 320px) {
-  .team {
-    padding: 40px 12px 50px;
-  }
-
-  .team-h2 {
-    font-size: 22px;
-    margin: 0 0 25px;
-  }
-
   .team-grid {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-  }
-
-  .team-card {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .team-card-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 12px;
-  }
-
-  .team-card-name {
-    font-size: 16px;
-  }
-
-  .team-card-role {
-    font-size: 14px;
   }
   .team-leaf {
     display: none;
@@ -189,145 +127,109 @@
 
 /* ====== Section 3 : le formulaire ====== */
 
-.formulaire1 {
+#form_contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 20px;
 }
-.form1 {
+.form_contact h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 40px;
+}
+.form {
   position: relative;
-  padding: 40px;
   z-index: 2;
-  overflow: visible;
 }
 
-.formulaire1 h2 {
-  padding: 40px;
-}
-
-input.wpcf7-form-control.wpcf7-text {
+.form-name input[type="text"],
+.form-email input[type="email"] {
   width: 100%;
-  max-width: 450px;
   height: 60px;
   border: none;
   border-radius: 5px;
   margin: 10px 0;
 }
-.form-email {
-  margin: 20px 0 20px;
-}
 
-.wpcf7-textarea {
+.form-message textarea {
   width: 100%;
-  max-width: 450px;
   height: 250px;
   border: none;
   border-radius: 5px;
   margin: 10px 0;
 }
+
+.img_decorative {
+  position: absolute;
+  width: 150px;
+  left: 39%;
+  bottom: -59%;
+}
+
 input[type="submit"].wpcf7-submit {
   border: 0;
   background-color: #e0b9b4;
-  padding: 20px;
-  margin-top: 20px;
+  display: block;
+  padding: 20px 40px;
+  margin: 20px auto 0;
+  font-size: 16px;
   color: #fff;
-  width: 100%;
-  max-width: 180px;
-  margin-left: 48px;
   border-radius: 6px;
+  width: auto;
+  cursor: pointer;
 }
 input[type="submit"].wpcf7-submit:hover {
   background-color: #c02e44;
 }
 
-.form1 .feuille-1 {
-  position: absolute;
-  z-index: -1;
-  bottom: 95px;
-  left: -38px;
-  width: 160px;
-  height: auto;
-}
-
 /* ====== Média query - tablette/téléphone ====== */
+
+@media screen and (max-width: 1800px) {
+  .img_decorative {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
-  .form1 {
-    padding: 30px;
+  .form {
+    width: 350px;
+    max-width: 350px;
   }
-
-  input.wpcf7-form-control.wpcf7-text,
-  .wpcf7-textarea {
-    width: 100%;
-  }
-
   input[type="submit"].wpcf7-submit {
     margin-left: 0;
     display: block;
     margin: 20px auto 0;
   }
-  .form1 .feuille-1 {
-    overflow: visible;
-  }
-  .range-can-img {
-    width: 100%;
+  .img_decorative {
+    display: none;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .formulaire1 {
-    margin: 10px;
-  }
-
-  .form1 {
-    padding: 20px;
-    width: 100%;
-  }
-
-  .formulaire1 h2 {
-    padding: 20px 10px;
-    text-align: center;
-  }
-
-  input.wpcf7-form-control.wpcf7-text,
-  .wpcf7-textarea {
-    width: 100%;
-    height: auto;
-  }
-
-  .wpcf7-textarea {
-    min-height: 180px;
-  }
-
-  .range-can-img {
-    width: 100%;
+  .img_decorative {
+    display: none;
   }
 }
 /* ===============================
           PAGE : COMMANDE
    =============================== */
 
-.contain {
+.wp-block-contact-form-7-contact-form-selector {
   display: flex;
-  background-color: #3b8e46;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 60px 20px;
 }
-.order-contain {
-  /* conteneur avec les items */
-  width: 100%;
-  max-width: 860px;
-}
-.order-h1 {
+.order_h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
   color: #fff;
-  margin: 40px;
+  padding: 60px 20px 40px;
 }
-.order-p1 {
-  /* votre commande */
+.order_p {
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   padding: 30px 0;
   text-align: start;
 }
@@ -338,7 +240,7 @@ input[type="submit"].wpcf7-submit:hover {
 .grid_gallery_qty {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center; /* centre image + input dans chaque colonne */
+  justify-items: center;
   align-items: start;
 }
 
@@ -351,7 +253,7 @@ input[type="submit"].wpcf7-submit:hover {
 
 /* Le petit carré blanc avec le chiffre */
 .grid_gallery_qty .qty-input {
-  margin: 30px; /* distance sous l’image */
+  margin: 30px;
   width: 39px;
   height: 56px;
   background: #ffffff;
@@ -413,11 +315,15 @@ input[type="submit"].wpcf7-submit:hover {
   top: 10px;
   bottom: 10px;
   left: 50%;
-  width: 2px;
+  width: 1px;
   background: #fff;
-  transform: translateX(-1px);
 }
-input.wpcf7-form-control.wpcf7-text {
+.order-form-name input[type="text"],
+.order-form-firstname input[type="text"],
+.order-form-address input[type="text"],
+.order-form-postal input[type="text"],
+.order-form-e-mail input[type="email"],
+.order-form-city input[type="text"] {
   width: 100%;
   height: 60px;
   border: none;
@@ -452,13 +358,14 @@ input.wpcf7-form-control.wpcf7-text {
 .order-form-submit {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-left: 70px;
 }
 
 .order-form-submit input[type="submit"] {
   background: #e0b9b4;
   color: #fff;
   border: none;
+  width: 198px;
   border-radius: 4px;
   padding: 16px;
   font-size: 16px;
@@ -468,48 +375,22 @@ input.wpcf7-form-control.wpcf7-text {
 .order-form-submit input[type="submit"]:hover {
   background-color: #c02e44;
 }
-.order-contain {
-  width: 100%; /*des largeurs fluides*/
-  max-width: 860px;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-
-/* Les cartes parfums */
-.order-grid {
-  display: flex;
-  flex-direction: row;
-}
-
-.order-item {
-  width: 220px;
-}
 
 /* ===== 768px (tablettes & mobiles) ====== */
 @media screen and (max-width: 768px) {
-  .order-h1 {
-    margin: 20px 0;
-    text-align: center;
-    font-size: 28px;
-  }
-
-  .order-p1 {
-    font-size: 22px;
-    padding: 30px 0;
-    text-align: center;
+  .form_command {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Grille des parfums : on réduit l'écart et on autorise le retour à la ligne */
   .grid_gallery_qty {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 28%;
-  }
-
-  .order-item {
-    align-items: center;
   }
 
   /* Formulaire en 1 colonne */
@@ -553,42 +434,31 @@ input.wpcf7-form-control.wpcf7-text {
   .title-info,
   .title-delivery p {
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
+  }
+  .order-form-submit {
+    margin-left: 15px;
   }
 }
 
-/* ========= ≤ 480px / 320px (petits mobiles) ========= */
-@media screen and (max-width: 480px) {
-  .contain {
-    width: 100%;
-    align-items: center;
-  }
-
-  .order-contain {
-    padding: 0 12px;
-  }
-
-  .order-h1 {
-    font-size: 24px;
-  }
-
-  .order-p1 {
-    font-size: 18px;
-  }
-
-  /* Une carte par ligne */
-  .order-grid {
+/* ========= ≤320px  ========= */
+@media screen and (max-width: 468px) {
+  .form_command {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  .order-item {
-    width: 100%;
-    max-width: 260px;
+  .order_h1 {
+    font-size: 25px;
+    padding: 40px 20px 30px;
   }
-
-  .order-qty input[type="number"] {
-    width: 48px;
-    height: 48px;
+  .grid_gallery_qty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p.order_p {
+    font-size: 25px;
   }
 }
